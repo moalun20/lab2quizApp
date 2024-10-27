@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz App</title>
+        <link rel="stylesheet" href="styles/stylesheet.css">
+    </head>
+    <body>
+        <header>
+            <h1>Quiz</h1>
+        </header>
+    <div class="wrapper">
+               <!--User information-->
+        <div id="visitorInfo">
+            <h2>Who are you?</h2>
+            <form id="infoForm" novalidate>
+                <div class="questionField">
+                    <label for="firstName">First name*:</label>
+                    <input type="text" id="firstName" required>
+                    <span id="firstNameError" class="error"></span><br>
+                </div>
+                <div class="questionField">
+                    <label for="lastName">Last name*:</label>
+                    <input type="text" id="lastName" required>
+                    <span id="lastNameError" class="error"></span><br>
+                </div>
+                <div class="questionField">
+                    <label for="email">Email adress*:</label>
+                    <input type="email" id="email" required>
+                    <span id="emailError" class="error"></span><br>
+                </div>
+                    <button type="button" class="submit" onclick="validateAndContinue()">Start quiz</button>
+            </form>
+        </div>
+        <!-- Quiz-frågor -->
+        <div id="quizSection" style="display: none;">
+            <h2>Quiz Frågor</h2>
+        </div>
+    </div>
+
+        <script src="yourname.js"></script>
+    </body>
+</html>
