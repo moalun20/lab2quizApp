@@ -1,32 +1,139 @@
-body{
+body {
     background-color: #2c2c2c;
     color: #d2d2d2;
-    margin:0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerar allt horisontellt */
+    justify-content: center; /* Centrerar allt vertikalt */
+    height: 100vh; /* Fyller hela höjden på visningsfönstret */
 }
-header{
-    top:0;
+
+header {
+    top: 0;
     padding-left: 2rem;
+    margin-bottom: 20px; /* Lägger till avstånd under headern */
 }
-.wrapper{
-    display:flex;
+
+label {
+    font-size: 16px;
+    max-width: 250px; /* Sätter maxbredd på etiketter */
+    text-align: center; /* Centrerar texten i etiketten */
+}
+
+.wrapper {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    width:100%; 
+    align-items: center; /* Centrerar barnen horisontellt */
+    width: 100%;
+    max-width: 600px; /* Sätter maxbredd på wrappern */
+    padding: 20px; /* Padding runt wrappern */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Lätt skugga för att ge djup */
+    border-radius: 10px; /* Rundade hörn */
+    background-color: #3c3c3c; /* Bakgrundsfärg för wrappern */
 }
-.submit{
-   padding: 8px 16px;
-   border: 1px solid #fefefe;
-   border-radius: 50px;
-   color: #fefefe;
-   background-color: rgba(254, 254, 254, 0)
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Flyttar innehållet (knapparna) till höger */
+    margin-top: 20px; /* Lägger till avstånd ovanför knapparna, justera vid behov */
 }
-.submit:hover{
+
+.submit {
+    padding: 8px 16px;
+    border: 1px solid #fefefe;
+    border-radius: 50px;
+    color: #fefefe;
+    background-color: rgba(254, 254, 254, 0);
+    cursor: pointer; /* Ändrar muspekaren till hand */
+}
+
+.submit:hover {
     background-color: rgba(254, 254, 254, 1);
-    color:#2c2c2c;
+    color: #2c2c2c;
 }
-.questionField{
-    display:flex;
+
+input[type="text"],
+input[type="email"] {
+    width: 100%; /* Fyller hela bredden av föräldraelementet */
+    max-width: 400px; /* Maxbredd för att förhindra att de blir för stora */
+    height: px; /* Justerad höjd på inputfälten */
+    padding: 10px; /* Ökar inre marginalen för att göra texten mer läsbar */
+    margin-top: 5px; /* Avstånd ovanför fälten */
+    border: 1px solid #ccc; /* Ramfärg */
+    border-radius: 5px; /* Rundade hörn */
+    background-color: #4c4c4c; /* Bakgrundsfärg för inputfält */
+    color: #d2d2d2; /* Textfärg för inputfält */
+    font-size: 16px; /* Textstorlek */
+}
+
+.questionField {
+    display: flex;
     flex-direction: column;
-    width: 320px;
-    padding-bottom:0.5rem;
+    align-items: flex-start; /* Centrera barnen horisontellt */
+    padding-bottom: 0.5rem;
+}
+
+.checkboxWrapper {
+    display: flex;
+    align-items: center; /* Centrerar checkbox och label vertikalt */
+    margin: 5px 0; /* Avstånd mellan checkboxar */
+}
+
+/* Styling för felmeddelanden */
+.error {
+    color: red; /* Röd färg för felmeddelanden */
+    margin-top: 5px; /* Avstånd ovanför felmeddelanden */
+    word-wrap: break-word; /* Gör att långa ord bryts i flera rader */
+    max-width: 100%; /* Låt felmeddelandet ta upp hela bredden */
+    text-align: center; /* Centrerar texten */
+    font-size: 14px; /* Justerar storleken om nödvändigt */
+    height: 20px; /* Anger höjd för felmeddelanden, om nödvändigt */
+    overflow: hidden; /* Dölj överflödigt innehåll om det blir för långt */
+}
+
+/* Specificerar att quiz-sektionen ska centreras */
+#quizSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrera allt i quiz-sektionen */
+    width: 100%; /* Fyller tillgängligt utrymme */
+}
+
+/* Media Queries för responsiv design */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 15px; /* Minska padding på mindre skärmar */
+        width: 90%; /* Gör wrappern bredare på små skärmar */
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        max-width: 100%; /* Tillåter input att fylla hela bredden */
+    }
+
+    .submit {
+        width: 100%; /* Gör knapparna fullt breda */
+        padding: 12px 0; /* Större padding för lättare klick */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Lägger till padding runt hela sidan */
+    }
+
+    label {
+        font-size: 14px; /* Minska textstorleken på etiketter */
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        height: 45px; /* Justerad höjd för mobil */
+    }
+
+    .submit {
+        padding: 10px 0; /* Justera padding på knapparna */
+    }
 }

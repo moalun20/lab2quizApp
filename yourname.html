@@ -12,8 +12,9 @@
         </header>
     <div class="wrapper">
                <!--User information-->
+               
         <div id="visitorInfo">
-            <h2>Who are you?</h2>
+
             <form id="infoForm" novalidate>
                 <div class="questionField">
                     <label for="firstName">First name*:</label>
@@ -30,12 +31,51 @@
                     <input type="email" id="email" required>
                     <span id="emailError" class="error"></span><br>
                 </div>
-                    <button type="button" class="submit" onclick="validateAndContinue()">Start quiz</button>
+                <div class="button-container">
+                    <button type="button" class="submit" onclick="validateAndShowQuiz()">Start quiz</button>
+                </div>
             </form>
         </div>
         <!-- Quiz-frågor -->
         <div id="quizSection" style="display: none;">
             <h2>Quiz Frågor</h2>
+            <form id="quizForm">
+                <label>1. Vilket av följande områden är huvudfokus inom UX-design? <span class="required">*</span></label><br>
+                <input type="radio" name="question1" value="Användarvänlighet" required>Användarvänlighet<br>
+                <input type="radio" name="question1" value="Grafisk design">Grafisk design<br>
+                <input type="radio" name="question1" value="Programmering">Programmering<br>
+                <span id="question1Error" class="error"></span><br>
+    
+                <label>2. Vilka av följande metoder används ofta inom UX-design? <span class="required">*</span></label><br>
+                <input type="checkbox" name="question2" value="Användartester" required>Användartester<br>
+                <input type="checkbox" name="question2" value="Databasdesign">Databasdesign<br>
+                <input type="checkbox" name="question2" value="Akvarell">Akvarell<br>
+                <span id="question2Error" class="error"></span><br>
+    
+                <label>3. Hur många användare föreslås det ofta som minimum för att genomföra användbarhetstester enligt Nielsen Norman Group? <span class="required">*</span></label><br>
+                <input type="radio" name="question3" value="3" required>3<br>
+                <input type="radio" name="question3" value="5">5<br>
+                <input type="radio" name="question3" value="10">10<br>
+                <span id="question3Error" class="error"></span><br>
+        
+                <label>4. Vad kallas de fiktiva representationer av användargrupper som UX-designers ofta använder för att förstå målgruppen bättre?<span class="required">*</span></label><br>
+                <input type="text" name="question4" required><br>
+                <span id="question4Error" class="error"></span><br>
+    
+                <label>5. Vilket begrepp används för att beskriva den ordning i vilken en användares uppmärksamhet riktas på en webbplats, till exempel genom användning av olika storlekar och färger? <span class="required">*</span></label><br>
+                <input type="text" name="question5" required><br>
+                <span id="question5Error" class="error"></span><br>
+                <div class ="button-container">
+                <button type="button" class="submit"onclick="submitQuiz()">Skicka Quiz</button>
+                </div>
+            </form>
+        </div>
+    
+        <div id="resultSection" style="display: none;">
+            <h2>Resultat</h2>
+            <p id="resultMessage"></p>
+            <div id="correctAnswers">
+            </div>
         </div>
     </div>
 
