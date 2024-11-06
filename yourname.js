@@ -1,39 +1,58 @@
-//Validering real-tid
+// Validering i realtid
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('firstName').addEventListener('input', validateFirstName);
     document.getElementById('lastName').addEventListener('input', validateLastName);
     document.getElementById('email').addEventListener('input', validateEmail);
 });
+//Validera förnamn
 function validateFirstName() {
-    const firstName = document.getElementById('firstName').value.trim(); // Hämtar värdet från fältet och tar bort mellanslag
+    const firstName = document.getElementById('firstName').value.trim();
+    const errorElement = document.getElementById('firstNameError');
+    const successElement = document.getElementById('firstNameSuccess');
+    
     if (!firstName || !/^[A-Za-zåäöÅÄÖ]+$/.test(firstName)) {
-        document.getElementById('firstNameError').textContent = 'Förnamn krävs och får endast innehålla bokstäver.';
+        errorElement.textContent = 'Förnamn krävs och får endast innehålla bokstäver.';
+        successElement.textContent = '';
     } else {
-        document.getElementById('firstNameError').textContent = ''; // Tar bort felmeddelandet om det är giltigt
+        errorElement.textContent = '';
+        successElement.textContent = 'Förnamnet är giltigt!';
     }
 }
+// Validera efternamn
 function validateLastName() {
     const lastName = document.getElementById('lastName').value.trim();
+    const errorElement = document.getElementById('lastNameError');
+    const successElement = document.getElementById('lastNameSuccess');
+    
     if (!lastName || !/^[A-Za-zåäöÅÄÖ]+$/.test(lastName)) {
-        document.getElementById('lastNameError').textContent = 'Efternamn krävs och får endast innehålla bokstäver.';
+        errorElement.textContent = 'Efternamn krävs och får endast innehålla bokstäver.';
+        successElement.textContent = '';
     } else {
-        document.getElementById('lastNameError').textContent = '';
+        errorElement.textContent = '';
+        successElement.textContent = 'Efternamnet är giltigt!';
     }
 }
-
+// Validera email
 function validateEmail() {
     const email = document.getElementById('email').value.trim();
+    const errorElement = document.getElementById('emailError');
+    const successElement = document.getElementById('emailSuccess');
+    
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
-        document.getElementById('emailError').textContent = 'En giltig e-postadress krävs.';
+        errorElement.textContent = 'En giltig e-postadress krävs.';
+        successElement.textContent = '';
     } else {
-        document.getElementById('emailError').textContent = '';
+        errorElement.textContent = '';
+        successElement.textContent = 'E-postadressen är giltig!';
     }
 }
-function validateAndShowQuiz() {
-    // Rensa felmeddelanden
+// Validera information och visa quiz
+function showQuiz() {
+    // Rensa tidigare felmeddelanden
     document.querySelectorAll('.error').forEach(el => el.textContent = '');
+    document.querySelectorAll('.success').forEach(el => el.textContent = ''); // Tömmer också successmeddelanden
 
-    // Hämta värden
+    // Hämta värden från formuläret
     const firstName = document.getElementById('firstName').value.trim();
     const lastName = document.getElementById('lastName').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -58,10 +77,10 @@ function validateAndShowQuiz() {
         isValid = false;
     }
 
-    // Visa quiz-sektionen om allt är giltigt
+    // Om alla fält är giltiga, visa quiz-sektionen
     if (isValid) {
-        document.getElementById('infoForm').style.display = 'none';
-        document.getElementById('quizSection').style.display = 'block';
+        document.getElementById('infoForm').style.display = 'none'; // Göm infoformuläret
+        document.getElementById('quizSection').style.display = 'block'; // Visa quizet
     }
 }
 

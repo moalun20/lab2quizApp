@@ -92,6 +92,17 @@ input[type="email"] {
     height: 20px; /* Anger höjd för felmeddelanden, om nödvändigt */
     overflow: hidden; /* Dölj överflödigt innehåll om det blir för långt */
 }
+/* Styling för successmeddelanden */
+.success {
+    color: green; /* Röd färg för felmeddelanden */
+    margin-top: 5px; /* Avstånd ovanför felmeddelanden */
+    word-wrap: break-word; /* Gör att långa ord bryts i flera rader */
+    max-width: 100%; /* Låt felmeddelandet ta upp hela bredden */
+    text-align: center; /* Centrerar texten */
+    font-size: 14px; /* Justerar storleken om nödvändigt */
+    height: 20px; /* Anger höjd för felmeddelanden, om nödvändigt */
+    overflow: hidden; /* Dölj överflödigt innehåll om det blir för långt */
+}
 
 /* Specificerar att quiz-sektionen ska centreras */
 #quizSection {

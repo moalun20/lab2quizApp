@@ -20,19 +20,22 @@
                     <label for="firstName">First name*:</label>
                     <input type="text" id="firstName" required>
                     <span id="firstNameError" class="error"></span><br>
+                    <span id="firstNameSuccess" class="success"></span><br>
                 </div>
                 <div class="questionField">
                     <label for="lastName">Last name*:</label>
                     <input type="text" id="lastName" required>
                     <span id="lastNameError" class="error"></span><br>
+                    <span id="lastNameSuccess" class="success"></span><br>
                 </div>
                 <div class="questionField">
                     <label for="email">Email adress*:</label>
                     <input type="email" id="email" required>
                     <span id="emailError" class="error"></span><br>
+                    <span id="emailSuccess" class="success"></span><br>
                 </div>
                 <div class="button-container">
-                    <button type="button" class="submit" onclick="validateAndShowQuiz()">Start quiz</button>
+                    <button type="button" class="submit" onclick="showQuiz()">Start quiz</button>
                 </div>
             </form>
         </div>
