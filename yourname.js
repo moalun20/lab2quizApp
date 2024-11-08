@@ -124,8 +124,6 @@ function submitQuiz() {
 
     // Validering av fråga 4 (öppet textfält)
     if (!question4) {
-        document.getElementById('question4Error').textContent = 'Denna fråga är obligatorisk.';
-        isValid = false;
     } else if (question4.toLowerCase() === 'Personas') {  // Exempel-svar
         score++;
     }else if (question4.toLowerCase() === 'personas') {  // Gör jämförelsen mer tolerant
